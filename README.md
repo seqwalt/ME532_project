@@ -10,7 +10,7 @@ This dataset is used top predict if a patient has cardiovascular disease. I prov
 
 The feature data will be used in LS, SVM and NN classifiers. I have used 10-fold cross validation (9 training sets, and 1 test set) to compare the result of Ridge regression, LASSO and SVM. I plan on using a NN as well, which is expected to have the best result of all the classifiers because it can approximate any classifier boundary. The current preliminary results do not incorporate one-hot encoding, so currently SVM has the worst performance in terms of correct classifications. The current analysis is in the following table:
 
-_ | Avg sq. err | Avg num errs | Avg err rate | Best avg λ
+0 | Avg sq. err | Avg num errs | Avg err rate | Best avg λ
 - | ----------- | ------------ | ------------ | ----------
 **Ridge** | 5322.1 | 1886.1 | 0.274 | 22.3
 **LASSO** | 6854.8 | 2269.0 | 0.330 | 1873817.4
