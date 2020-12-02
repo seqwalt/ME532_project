@@ -16,6 +16,11 @@ Ridge | 5322.1 | 1886.1 | 0.274 | 22.3
 LASSO | 6854.8 | 2269.0 | 0.330 | 1873817.4
 SVM   | 6880.7 | 3404.1 | 0.495 | 0.0
 
+First Header | Second Header
+------------ | -------------
+Content from cell 1 | Content from cell 2
+Content in the first column | Content in the second column
+
 I addition to using one-hot encoding, I plan to test if any low-rank approximations of the data result in better classifiers than the full-rank data. The log of the singular values were plotted, and it looks like a rank-5 matrix would be a good initital test, because the first 5 singular values are clearly seperate from the others. Here is the plot:
 
 
