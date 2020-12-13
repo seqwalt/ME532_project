@@ -4,7 +4,7 @@ This is a project for ECE 532: Matrix Methods in Machine Learning at the Univers
 
 ## Usage:
 
-To train the binary classifiers at once, run `RunAlgorithms.py` while maintaining the same folder-file structure. Run `CreatePlots.py` to recreate the correlation heatmap and singular value plots. Additionally, the jupyter notebook I used to create and tinker with the algorithms --- `sandbox.ipynb` --- creates singular value plots, trains the binary classifiers, and is self-contained so it does not have dependencies on other files.
+To train the binary classifiers at once, run `RunAlgorithms.py` while maintaining the same folder-file structure. Run `CreatePlots.py` to recreate the correlation heatmap and singular value plots. Additionally, the jupyter notebook I used to create and tinker with the algorithms, `sandbox.ipynb`, creates singular value plots, trains the binary classifiers, and is self-contained so it does not have dependencies on other files.
 
 ## Dataset: [Cardiovascular diseases dataset (clean)](https://www.kaggle.com/aiaiaidavid/cardio-data-dv13032020)
 
