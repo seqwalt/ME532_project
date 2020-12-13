@@ -2,6 +2,10 @@
 
 This is a project for ECE 532: Matrix Methods in Machine Learning at the University of Wisconsin, Madison. The purpose is to perform a classification task on a public dataset.
 
+## Usage:
+
+Execute `python3 RunAlgorithm.py` in the terminal while maintaining the same folder-file structure.
+
 ## Dataset: [Cardiovascular diseases dataset (clean)](https://www.kaggle.com/aiaiaidavid/cardio-data-dv13032020)
 
 This dataset is used top predict if a patient has cardiovascular disease. I provides 11 features: age, height, weight, gender, systolic blood pressure, diastolic blood pressure, cholesterol, glucose, smoke, alcohol, and physical activity. Six of these features are categorical, which will require the use of one-hot encoding of these features. 
