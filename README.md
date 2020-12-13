@@ -18,7 +18,7 @@ The feature data will be used in LS, SVM and NN classifiers. I have used 10-fold
 
 I addition to using one-hot encoding, I plan to test if any low-rank approximations of the data result in better classifiers than the full-rank data. The log of the singular values were plotted, and it looks like a rank-5 matrix would be a good initital test, because the first 5 singular values are clearly seperated from the others. Here is the plot:
 
-<img src="https://github.com/seqwalt/ME532_project/blob/master/media/singular_vals.png" alt="singular values" width="400">
+<img src="https://github.com/seqwalt/ME532_project/blob/master/media/singular_vals.png" alt="singular values" width="600">
 
 ## Timeline:
 `11/24/2020:` Switched projects  
