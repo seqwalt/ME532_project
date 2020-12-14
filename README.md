@@ -8,7 +8,9 @@ To train the binary classifiers at once, run `RunAlgorithms.py` while maintainin
 
 ## Dataset: [Cardiovascular diseases dataset (clean)](https://www.kaggle.com/aiaiaidavid/cardio-data-dv13032020)
 
-In addition to including whether a patient has a CVD, this dataset provides 11 features: age, height, weight, gender, systolic blood pressure, diastolic blood pressure, cholesterol, glucose, smoking level, alcohol drinking level and physical activity.  Six of the eleven of these features are categorical including gender, cholesterol, glucose, smoke, alcohol and physical activity. It includes data from 68,783 patients, and the dataset creator has ensured there are no missing or incorrect values.
+In addition to including whether a patient has a CVD, this dataset provides 11 features: age, height, weight, gender, systolic blood pressure, diastolic blood pressure, cholesterol, glucose, smoking level, alcohol drinking level and physical activity.  Six of the eleven of these features are categorical including gender, cholesterol, glucose, smoke, alcohol and physical activity. It includes data from 68,783 patients, and the dataset creator has ensured there are no missing or incorrect values. Here is a correlation heatmap of the original features:
+
+<img src="https://github.com/seqwalt/ME532_project/blob/master/media/heatmap.png" alt="correlation heatmap" width="800">
 
 ## Algorithms: Least Squares (LS), Support Vector Machine (SVM), Neural Network (NN)
 
