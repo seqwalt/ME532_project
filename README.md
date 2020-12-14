@@ -14,7 +14,7 @@ In addition to including whether a patient has a CVD, this dataset provides 11 f
 
 ## Algorithms: Least Squares (LS), Support Vector Machine (SVM), Neural Network (NN)
 
-The feature data will be used in LS, SVM and NN classifiers. I have used 10-fold cross validation (9 training sets, and 1 test set) to compare the result of Ridge regression, LASSO, SVM and NN. The features matrix used for classification uses one-hot encoding for the categorical features and feature scaling to normailize the range of the features. The current analysis is in the following table:
+The feature data has been used in LS, SVM and NN classifiers. I have used 10-fold cross validation (9 training sets, and 1 test set) to compare the result of Ridge regression, LASSO, SVM and NN. The features matrix used for classification uses one-hot encoding for the categorical features and feature scaling to normalize the range of the features. The current analysis is in the following table:
 
 |           | Avg Sq Error | Avg Num Errors | Avg Error Rate | Best Avg λ |
 | --------- | ------------ | -------------- | -------------- | ---------- |
