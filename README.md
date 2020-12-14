@@ -8,19 +8,20 @@ To train the binary classifiers at once, run `RunAlgorithms.py` while maintainin
 
 ## Dataset: [Cardiovascular diseases dataset (clean)](https://www.kaggle.com/aiaiaidavid/cardio-data-dv13032020)
 
-This dataset is used top predict if a patient has cardiovascular disease. I provides 11 features: age, height, weight, gender, systolic blood pressure, diastolic blood pressure, cholesterol, glucose, smoke, alcohol, and physical activity. Six of these features are categorical, which will require the use of one-hot encoding of these features. 
+In addition to including whether a patient has a CVD, this dataset provides 11 features: age, height, weight, gender, systolic blood pressure, diastolic blood pressure, cholesterol, glucose, smoking level, alcohol drinking level and physical activity.  Six of the eleven of these features are categorical including gender, cholesterol, glucose, smoke, alcohol and physical activity. It includes data from 68,783 patients, and the dataset creator has ensured there are no missing or incorrect values.
 
 ## Algorithms: Least Squares (LS), Support Vector Machine (SVM), Neural Network (NN)
 
-The feature data will be used in LS, SVM and NN classifiers. I have used 10-fold cross validation (9 training sets, and 1 test set) to compare the result of Ridge regression, LASSO and SVM. I plan on using a NN as well, which is expected to have the best result of all the classifiers because it can approximate any classifier boundary. The current preliminary results do not incorporate one-hot encoding, and currently SVM has the worst performance in terms of correct classifications likely due to one-hot not being used. The current analysis is in the following table:
+The feature data will be used in LS, SVM and NN classifiers. I have used 10-fold cross validation (9 training sets, and 1 test set) to compare the result of Ridge regression, LASSO, SVM and NN. The features matrix used for classification uses one-hot encoding for the categorical features and feature scaling to normailize the range of the features. The current analysis is in the following table:
 
 |           | Avg Sq Error | Avg Num Errors | Avg Error Rate | Best Avg λ |
 | --------- | ------------ | -------------- | -------------- | ---------- |
-| **Ridge** |       5322.1 |         1886.1 |          0.274 |       22.3 |
-| **LASSO** |       6854.8 |         2269.0 |          0.330 |  1873817.4 |
-|   **SVM** |       6880.7 |         3404.1 |          0.495 |        0.0 |
+| **Ridge** |       2669.2 |          946.6 |          0.275 |    8470.5  |
+| **LASSO** |       2665.1 |          945.8 |          0.275 |     419.2  |
+|   **SVM** |       5189.8 |          942.7 |          0.274 |       1.06 |
+|    **NN** |       3282.8 |         1042.8 |          0.303 |     ---    |
 
-I addition to using one-hot encoding, I plan to test if any low-rank approximations of the data result in better classifiers than the full-rank data. The log of the singular values were plotted, and it looks like a rank-5 matrix would be a good initital test, because the first 5 singular values are clearly seperated from the others. Here is the plot:
+I addition to using one-hot encoding and feature scaling, a low-rank approximations is used to bring the one-hot encoded matrix from a rank of 19 to that of 14. The log of the singular values were plotted, showing the change of the singular value from before and after normalizing, one-hot encoding and rank-approximating the feature matrix. Notice that the normalization has caused the singular values to even out.
 
 <img src="https://github.com/seqwalt/ME532_project/blob/master/media/singular_vals.png" alt="singular values" width="800">
 
