@@ -13,9 +13,17 @@ Araw = A_d[:,0:11]
 d = A_d[:,11].reshape(-1,1)
 d[d == 0] = -1
 
+# --- Data Preprocessing --- #
+#Feature scaling
+A = normalize(Araw)
+Ad = np.hstack((A,d))
+
 # --- Display Correlation Heatmap --- #
+vis_data1 = pd.DataFrame(data=Ad, columns=["Age","Gender","Height","Weight","Systolic BP",
+"Diastolic BP","Cholesterol","Glucose","Smokes","Drinks Alcohol","Active","CVD"])
+
 plt.figure(figsize=(12, 10))
-heatmap = sns.heatmap(vis_data.corr(),
+heatmap = sns.heatmap(vis_data1.corr(),
         annot=True, linewidths=0, vmin=-1,
         cmap=sns.diverging_palette(20, 220, n=200)
 )
@@ -25,9 +33,6 @@ heatmap.set_xticklabels(
     horizontalalignment='right'
 );
 
-# --- Data Preprocessing --- #
-#Feature scaling
-A = normalize(Araw)
 # one-hot encoding for gender, cholesterol, glucose, smoke, alcohol and
 # physical activity
 A = one_hot(A,[1,6,7,8,9,10])
@@ -45,7 +50,7 @@ ax.plot(s2,'^-') # Plot sing vals for low-rank approx of
 ax.set_xlabel('Index $i$', fontsize=17)
 ax.set_ylabel('$\sigma_i$', fontsize=17)
 ax.set_title('Linear Scale', fontsize=18)
-ax.legend(('Original data','Low-rank and normalized'),fontsize=13)
+ax.legend(('Original data','Rank-approx and normalized'),fontsize=13)
 ax.ticklabel_format(axis="y", style="sci", scilimits=(0,0))
 ax.yaxis.offsetText.set_fontsize(12)
 plt.xticks(fontsize=12)
@@ -69,6 +74,6 @@ ax1.set_title('Logarithmic Scale', fontsize=18)
 plt.xticks(fontsize=12)
 plt.yticks(fontsize=12)
 ax1.plot(np.log10(s2),'^-')
-ax1.legend(('Original data','Low-rank and normalized'),fontsize=13)
+ax1.legend(('Original data','Rank-approx and normalized'),fontsize=13)
 
 plt.show()
